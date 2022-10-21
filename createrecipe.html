@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <title>Create Recipe</title>
@@ -7,13 +7,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+      *{
+        text-align: center;
+      }
+
+      .creRec{
+        margin: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        
+      }
+
+      label{
+        display: inline-block;
+        float: left;
+        clear: left;
+        width: 30%;
+        text-align: right;
+      }
+
+      input{
+        width: 40%;
+        text-align:left;
+        line-height: 1.3em;
+        font-size: 1em;
+      }
+
+      button{
+        font-size: 135%;
+        padding: 0.2em;
+      }
+      
+    </style>
+
   </head>
   <body>
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
       <label class="logo">Recipe App</label>
       <ul>
         <li><a href="home.html">Home</a></li>
@@ -25,6 +57,35 @@
         <li><a href="logout.html">Logout</a></li>
       </ul>
     </nav>
-    <section></section>
+
+    <br>
+    <h1 style="font-size:  50px;">Create Recipe</h1><br>
+
+    <form class="creRec"> 
+      <div>
+        <label class="creRecrecName">Recipe Name:</label>
+            <input type="text" class="form-control" required="true"/>
+      </div><br>
+      <div>
+        <label class="">Prep Time (In minutes):</label>
+            <input type="number" class="form-control" required="true"/>
+      </div><br>
+      <div>
+        <label class="col-sm-3">Cook Time (In minutes):</label>
+            <input type="number" class="form-control" required="true"/>
+      </div><br>
+      <div>
+        <label class="col-sm-3">Ingredient(Comma Seprated):</label>
+            <input type="text" class="form-control" required="true"/>
+      </div><br>
+      <div>
+        <label class="col-sm-3">Instruction:</label>
+            <input type="text" class="form-control" required="true"/>
+      </div><br>
+      <div>
+            <button class="saveBtn" type="submit">Create</button>
+      </div>
+
+    </form>
   </body>
 </html>
