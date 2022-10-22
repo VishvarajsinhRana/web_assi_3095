@@ -7,8 +7,39 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+    <style>
+
+     *{
+        text-align: center;
+      }
+
+      .creRec{
+        margin: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        
+      }
+      
+      .grid-container {
+        
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-gap: 30px;
+       }
+
+       .grid-child-1{
+        border: 2px  solid ;
+        padding: 1.5em;
+        border-radius: 0.5em;
+
+       }
+
+       .grid-child-2{
+        border: 2px solid ;
+        border-radius: 0.5em;
+       }
+    </style>
+
     <nav>
       <input type="checkbox" id="check">
       <label for="check" class="checkbtn">
@@ -25,6 +56,45 @@
         <li><a href="logout.html">Logout</a></li>
       </ul>
     </nav>
-    <section></section>
+    <br>
+
+  </head>
+  <body>
+    
+
+    <h1>View Profile</h1>
+
+    <div class="grid-container">
+
+      <div class="grid-child-1">
+        <div>
+            <p class="mb-0">Full Name</p>
+        </div>
+        <div>
+          <p class="mb-0">/name here/</p>
+        </div>
+      <hr>
+        <div>
+            <p class="mb-0">Email</p>
+        </div>
+        <div>
+          <p class="mb-0">/email here/</p>
+        </div>
+      <hr>
+        <div>
+            <p class="mb-0">Username</p>
+        </div>
+        <div>
+          <p class="mb-0">/userName here/</p>
+        </div>
+      <hr>
+      </div>
+      
+      
+      <div class="grid-child-2">
+        <img src="AccountImage.png" alt="pic">
+      </div>
+    
+    </div>
   </body>
 </html>
