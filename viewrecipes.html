@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>View Recipe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <nav>
+      <label class="logo">Recipe App</label>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="createrecipe.html">Create Recipe</a></li>
+        <li><a class="active" href="#">View Recipe</a></li>
+        <li><a href="searchrecipe.html">Search Recipe</a></li>
+        <li><a href="planmeal.html">Plan Meal</a></li>
+        <li><a href="profile.html">View Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+    
+  </head>
+  <body>
+    <br>
+<h1 class="text-center">Details of Recipe</h1>
+<div class="container p-5 mt-2">
+    <table class="table">
+        <tr>
+            <th class="col-1">Recipe Name</th>
+            <!-- <td colspan="4" th:text="${recipe.recipeName}"></td> -->
+        </tr>
+        <tr>
+            <th>Preparation Time</th>
+            <!-- <td colspan="4" th:text="${recipe.prepTime}"></td> -->
+        </tr>
+        <!-- <tr th:each="i ,iStat:${ingredient}">
+            <th class="col-3" th:text="'Ingredient '+${iStat.count}+' of '+${iStat.size}"></th>
+            <td th:text="${i.item}"></td>
+            <td class="col-2" th:if="${isAuthorised}">
+                <form th:action="@{/registered/edit-ingredient(ingredientId=${i.id})}" method="post">
+                    <button class="btn btn-dark" type="submit">Edit This Ingredient</button>
+                </form>
+            </td>
+            <td class="col-2" th:if="${isAuthorised}">
+                <form th:action="@{/registered/delete-ingredient(recipeId=${recipe.id},ingredientId=${i.id})}"
+                      method="post">
+                    <button class="btn btn-dark" type="submit" th:text="'Remove Ingredient'"></button>
+                </form>
+            </td>
+            <td class="col-2">
+                <form th:action="@{/registered/save-to-cart(recipeId=${recipe.id},ingredientId=${i.id})}" method="post">
+                    <button class="btn btn-dark" type="submit" th:text="'Add To Shopping List'"></button>
+                </form>
+            </td>
+
+        -->
+        </tr>
+        <tr>
+            <th>Instructions</th>
+            <!-- <td colspan="4" th:text="${recipe.instruction}"></td> -->
+        </tr>
+        <tr>
+            <th>Date Added</th>
+            <!-- <td colspan="4" th:text="${recipe.dateAdded}"></td> -->
+        </tr>
+        <tr>
+            <th>Author</th>
+            <!-- <td colspan="4" th:text="${recipe.author.name}"></td> -->
+        </tr>
+    </table>
+    <table class="table text-center">
+        <tr>
+            <!--
+            <td>
+                <form th:action="@{/registered/add-favorite(recipeId=${recipe.id})}" th:object="${recipe}"
+                      method="post">
+                    <button class="btn btn-lg btn-dark" type="submit" th:if="${fav}"
+                            th:text="'Remove from favorite'"></button>
+                    <button class="btn btn-lg btn-dark" type="submit" th:if="${!fav}"
+                            th:text="'Add to favorite'"></button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/registered/create-plan(recipeId=${recipe.id})}" method="post">
+                    <button class="btn btn-lg btn-dark" type="submit" th:text="'Make Plan'"></button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/registered/index}" th:object="${recipe}" method="post">
+                    <button class="btn btn-lg btn-dark" type="submit" th:text="'Go Back'"></button>
+                </form>
+            </td>
+        -->
+        </tr>
+    </table>
+</div>
+    
+    </body>
+</html>

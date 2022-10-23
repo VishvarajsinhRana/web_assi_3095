@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <title>View Recipe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+      *{
+        text-align: center;
+      }
+
+      th{
+        font-size: 1.3em;
+      }
+
+    </style>
+
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
       <label class="logo">Recipe App</label>
       <ul>
         <li><a href="home.html">Home</a></li>
@@ -26,10 +33,41 @@
     </nav>
     
   </head>
-  <body class="text-center">
+  <body>
     <br>
-    <h1>View Recipes</h1>
-    <div th:replace="/registered/fragment.html::recipe_table">
+    <h1 style="font-size:  3.3em;">View Recipes</h1>
+    <br>
+    
+    <div class="container p-4 mt-2" th:if="${count2 &gt; 0}">
+      <table class="table">
+          <thead>
+          <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Prep Time</th>
+              <th>Date Added</th>
+              <th>Author Name</th>
+              <th>Description</th>
+          </tr>
+          </thead>
+          <!--  make changes for data.
+          <tbody>
+          <tr th:each="recipe2 ,recipeStat2:${recipes2}">
+              <td th:text="${recipeStat2.count}"></td>
+              <td th:text="${recipe2.recipeName}"></td>
+              <td th:text="${recipe2.prepTime} + ' minutes'"></td>
+              <td th:text="${recipe2.dateAdded}"></td>
+              <td th:text="${recipe2.author.name}"></td>
+              <td>
+                  <form th:action="@{/registered/view-recipe(recipeId=${recipe2.id})}" th:object="${recipe2}"
+                        method="post">
+                      <button class="btn btn-lg btn-dark" type="submit" th:text="'View Details'"></button>
+                  </form>
+              </td>
+          </tr>
+          </tbody>
+        -->
+      </table>
     </div>
     
     </body>

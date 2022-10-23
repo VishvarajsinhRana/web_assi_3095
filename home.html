@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+     *{
+        text-align: center;
+      }
+
+      .icon-link{
+        padding:0.4em;
+        font-size: 2.5em ;
+        color: #000000;
+
+      }
+
+      a:hover{
+        background-color: white
+      }
+
+      p{
+        font-size:1.5em;
+      }
+
+    </style>
+    
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
       <label class="logo">Recipe App</label>
       <ul>
         <li><a class="active" href="#">Home</a></li>
@@ -28,7 +46,42 @@
   </head>
 
   <body>
-    
-    <section></section>
+
+      <div class="container px-4 py-5" id="featured-2">
+        <h2 class="pb-2 border-bottom">
+            <div><span th:text="'Welcome ' + ${uName} + '!'"></span></div>  <!-- input user name here!!! -->
+        </h2>
+        <hr><br>
+
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+
+            <div class="feature-col">
+                <a class="icon-link" href="createrecipe.html" >Create Recipe</a>
+                <p>Make up your own dish. To get started, simply enter the dish name, prep time, ingredients, and Instructions.</p>
+            </div><br>
+
+            <div class="feature-col">
+                <a class="icon-link" href="viewrecipe.html" >View Recipes</a> 
+                <p>Seeking inspiration? Use the link above to view recipes that you and other people have created.</p>
+            </div><br>
+
+            <div class="feature-col">
+                <a class="icon-link" href="searchrecipe.html">Search Recipes</a>
+                <p>Have you already found what you're looking for and don't want to browse additional recipes? To find recipes, click the link above.</p>
+            </div><br>
+
+            <div class="feature-col">
+                <a class="icon-link" href="profile.html">View Profile</a>   <!-- have to make link to persons profile. -->
+                <p>Check out your profile information, which includes any recipes you've made or marked as favorites.</p>
+            </div><br>
+
+            <div class="feature-col">
+                <a class="icon-link" href="planmeal.html">Planned Meal</a>
+                <p>Make your meals in advance to save time coming up with supper ideas.</p>
+            </div><br>
+
+        </div>
+    </div>
+
   </body>
 </html>

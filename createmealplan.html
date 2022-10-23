@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Meal Plan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+      *{
+        text-align: center;
+        font-size:  1.2em;
+      }
+
+      .form-control{
+        height: 3em;
+        font-size:0.7em;
+        width: 80%;
+      }
+
+      .col-sm-4{
+        margin-left: 35%;
+      }
+
+      
+
+    </style>
+
+    <nav>
+      <label class="logo">Recipe App</label>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="createrecipe.html">Create Recipe</a></li>
+        <li><a href="viewrecipe.html">View Recipe</a></li>
+        <li><a href="searchrecipe.html">Search Recipe</a></li>
+        <li><a class="active" href="#">Plan Meal</a></li>
+        <li><a href="profile.html">View Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+    
+  </head>
+  <body>
+    <br>
+    <h1 style="font-size:  3.3em;">Create Meal Plan</h1>
+    <br/>
+    <!--
+    <p th:text="${recipe.recipeName}"></p>
+    <form th:action="@{/registered/save-meal(recipeId=${recipe.id})}" th:object="${meal}" method="post"> -->
+        <div class="row mb-3">
+            <label class="col-sm-3">Planning date:</label>
+            <div class="col-sm-8">
+                <input type="date" class="form-control" th:field="*{dateToBeMade}" th:required="true"
+                      th:oninvalid="this.setCustomValidity('Date cannot be blank')"
+                      th:oninput="this.setCustomValidity('')"/>
+            </div>
+        </div><br>
+        <div class="row mb-3">
+            <div class="col-sm-4">
+                <button class="w-100 btn btn-lg btn-dark" type="submit" style="font-size:1.2em">Save</button>
+            </div>
+        </div>
+    </form>
+
+  </body>
+</html>

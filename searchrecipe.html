@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <title>Search Recipe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
     <nav>
-      <input type="checkbox" id="check">
-      <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-      </label>
       <label class="logo">Recipe App</label>
       <ul>
         <li><a href="home.html">Home</a></li>
@@ -26,20 +21,19 @@
     </nav>
 
     <style>
-      body {
+      *{
         text-align: center;
       }
 
       input{
-        width: 35%;
+        width: 40%;
         text-align:left;
-        line-height: 1.5em;
-        font-size: 1.4em;
+        line-height: 1.7em;
+        font-size: 1.6em;
       }
 
       button{
-        font-size: 150%;
-        padding: 0.2em;
+        font-size: 1em;
        }
 
     </style>
@@ -48,12 +42,13 @@
   <body>
 
     <br>
-    <h1 style="font-size:  3.3em;">Search Recipe</h1><br>
+    <h1 style="font-size:3.3em;">Search Recipe</h1>
+    <br>
     <br>
     <input type="text" placeholder="Search Recipe"/>
     <br><br>
     <div>
-      <button class="editBtn" type="search">Search</button>
+      <button class="btn btn-lg btn-dark" type="search">Search</button>
     </div>
 
   </body>
