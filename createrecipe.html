@@ -5,7 +5,7 @@
     <title>Create Recipe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -29,8 +29,13 @@
         text-align: right;
       }
 
+      .label-in{
+        height: 3em;
+        
+      }
+
       input{
-        width: 40%;
+        width: 50%;
         text-align:left;
         line-height: 1.3em;
         font-size: 1em;
@@ -65,24 +70,20 @@
 
     <form class="creRec"> 
       <div>
-        <label class="creRecrecName">Recipe Name:</label>
-            <input type="text" class="form-control" required="true" placeholder="Name"/>
+        <label class="col-sm-3">Recipe Name:</label>
+            <input type="text" required="true" placeholder="Name"/>
       </div><br>
       <div>
-        <label class="">Prep Time (In minutes):</label>
-            <input type="number" class="form-control" required="true" placeholder="Minutes"/>
-      </div><br>
-      <div>
-        <label class="col-sm-3">Cook Time (In minutes):</label>
-            <input type="number" class="form-control" required="true" placeholder="Minutes"/>
+        <label class="col-sm-3">Prep Time (In minutes):</label>
+            <input type="number" required="true" placeholder="Minutes"/>
       </div><br>
       <div>
         <label class="col-sm-3">Ingredients(Comma Seprated):</label>
-            <input type="text" class="form-control" required="true" placeholder="Ingredients"/>
+            <input type="text" class="label-in" required="true" placeholder="Ingredients"/>
       </div><br>
       <div>
         <label class="col-sm-3">Instructions:</label>
-            <input type="text" class="form-control" required="true" placeholder="Instructions"/>
+            <input type="text" class="label-in" required="true" placeholder="Instructions"/>
       </div><br>
       <div>
             <button type="submit">Create</button>
