@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Edit Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        *{
+        text-align: center;
+      }
+    </style>
+
+    <nav>
+      <label class="logo">Recipe App</label>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="createrecipe.html">Create Recipe</a></li>
+        <li><a class="active" href="#">View Recipe</a></li>
+        <li><a href="searchrecipe.html">Search Recipe</a></li>
+        <li><a href="planmeal.html">Plan Meal</a></li>
+        <li><a href="profile.html">View Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+</head>
+
+<body class="text-center">
+
+<h1>Edit Profile</h1>
+
+<br/>
+
+<form th:action="@{/registered/save-profile}" th:object="${user}" method="post" enctype="multipart/form-data">
+    <div class="row mb-3">
+        <label class="col-sm-3">Name:</label>
+        <div class="col-sm-8">
+            <input id="name" name="name" type="text" class="form-control" th:field="*{name}" th:required="true"
+                   th:oninvalid="this.setCustomValidity('Name cannot be blank')"
+                   th:oninput="this.setCustomValidity('')" placeholder="Enter Name"/>
+        </div>
+    </div><br>
+
+    <div class="row mb-3">
+        <label class="col-sm-3">Email Id:</label>
+        <div class="col-sm-8">
+            <input id="name" name="name" type="email" class="form-control" th:field="*{emailId}"
+                   th:required="true"
+                   th:oninvalid="this.setCustomValidity('EmailId cannot be blank')"
+                   th:oninput="this.setCustomValidity('')" placeholder="Enter Email Id"/>
+        </div>
+    </div><br>
+
+    <div class="row mb-3">
+        <label class="col-sm-3">Username:</label>
+        <div class="col-sm-8">
+            <input id="name" name="name" type="text" class="form-control" th:field="*{username}"
+                   th:required="true"
+                   th:oninvalid="this.setCustomValidity('Username cannot be blank')"
+                   th:oninput="this.setCustomValidity('')" placeholder="Enter Username"/>
+        </div>
+    </div><br>
+
+    <div class="row mb-3">
+        <label class="col-sm-3">Password:</label>
+        <div class="col-sm-8">
+            <input id="name" name="name" type="password" class="form-control" th:field="*{password}"
+                   th:required="true"
+                   th:oninvalid="this.setCustomValidity('Password cannot be blank')"
+                   th:oninput="this.setCustomValidity('')" placeholder="Enter Password"/>
+        </div>
+    </div><br>
+
+    <div class="row mb-3">
+        <label class="col-sm-3">Profile Photo:</label>
+        <div class="col-sm-6">
+            <input type="file" name="image" accept="image/png, image/jpeg"/>
+        </div>
+        <img class="col-sm-3" th:src="@{${user.photosImagePath}}" height="200em"/>
+    </div><br>
+
+    <h4 th:utext="${err}"></h4>
+    <div class="row mb-3 justify-content-center">
+        <div >
+            <button style="padding-right:1.5em; padding-left: 1.5em;" class="w-100 btn btn-lg btn-dark" type="submit">Save</button>
+        </div>
+    </div><br>
+</form>
+</body>
+</html>

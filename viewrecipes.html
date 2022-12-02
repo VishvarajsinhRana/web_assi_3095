@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        *{
+        text-align: center;
+      }
+    </style>
+
     <nav>
       <label class="logo">Recipe App</label>
       <ul>
@@ -69,31 +75,29 @@
             <!-- <td colspan="4" th:text="${recipe.author.name}"></td> -->
         </tr>
     </table>
+
     <table class="table text-center">
         <tr>
-            <!--
             <td>
                 <form th:action="@{/registered/add-favorite(recipeId=${recipe.id})}" th:object="${recipe}"
                       method="post">
-                    <button class="btn btn-lg btn-dark" type="submit" th:if="${fav}"
-                            th:text="'Remove from favorite'"></button>
-                    <button class="btn btn-lg btn-dark" type="submit" th:if="${!fav}"
-                            th:text="'Add to favorite'"></button>
+                    <button class="btn btn-lg btn-dark" type="submit" th:if="${fav}">Remove from favorite</button>
+                    <button class="btn btn-lg btn-dark" type="submit" th:if="${!fav}">Add to favorite</button>
                 </form>
             </td>
             <td>
                 <form th:action="@{/registered/create-plan(recipeId=${recipe.id})}" method="post">
-                    <button class="btn btn-lg btn-dark" type="submit" th:text="'Make Plan'"></button>
+                    <button class="btn btn-lg btn-dark" type="submit">Make Plan</button>
                 </form>
             </td>
             <td>
                 <form th:action="@{/registered/index}" th:object="${recipe}" method="post">
-                    <button class="btn btn-lg btn-dark" type="submit" th:text="'Go Back'"></button>
+                    <button class="btn btn-lg btn-dark" type="submit">Go Back</button>
                 </form>
-            </td>
-        -->
+            </td>    
         </tr>
     </table>
+
 </div>
     
     </body>
