@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
-    <title>View Recipe</title>
+    <title>Details of Recipe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -34,7 +34,8 @@
             <th>Preparation Time</th>
             <!-- <td colspan="4" th:text="${recipe.prepTime}"></td> -->
         </tr>
-        <!-- <tr th:each="i ,iStat:${ingredient}">
+
+        <tr th:each="i ,iStat:${ingredient}">
             <th class="col-3" th:text="'Ingredient '+${iStat.count}+' of '+${iStat.size}"></th>
             <td th:text="${i.item}"></td>
             <td class="col-2" th:if="${isAuthorised}">
@@ -45,17 +46,16 @@
             <td class="col-2" th:if="${isAuthorised}">
                 <form th:action="@{/registered/delete-ingredient(recipeId=${recipe.id},ingredientId=${i.id})}"
                       method="post">
-                    <button class="btn btn-dark" type="submit" th:text="'Remove Ingredient'"></button>
+                    <button class="btn btn-dark" type="submit">Remove Ingredient</button>
                 </form>
             </td>
             <td class="col-2">
                 <form th:action="@{/registered/save-to-cart(recipeId=${recipe.id},ingredientId=${i.id})}" method="post">
-                    <button class="btn btn-dark" type="submit" th:text="'Add To Shopping List'"></button>
+                    <button class="btn btn-dark" type="submit">Add To Shopping List</button>
                 </form>
-            </td>
-
-        -->
+            </td>        
         </tr>
+
         <tr>
             <th>Instructions</th>
             <!-- <td colspan="4" th:text="${recipe.instruction}"></td> -->

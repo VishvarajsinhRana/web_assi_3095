@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Edit Ingredient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    *{
+        text-align: center;
+      }
+
+      label{
+        font-size: 1.5em;
+      }
+        
+    </style>
+
+    <nav>
+        <label class="logo">Recipe App</label>
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="createrecipe.html">Create Recipe</a></li>
+        <li><a class="active" href="#">View Recipe</a></li>
+        <li><a href="searchrecipe.html">Search Recipe</a></li>
+        <li><a href="planmeal.html">Plan Meal</a></li>
+        <li><a href="profile.html">View Profile</a></li>
+        <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <title>Edit Ingredient</title>
+</head>
+<body class="text-center">
+<br/>
+<h1>Edit Ingredient</h1>
+<br/>
+<form th:action="@{/registered/save-ingredient(ingredientId=${ingredient.id})}" th:object="${ingredient}" method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3">Ingredient:</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" th:field="*{item}" required="true"
+                   th:oninvalid="this.setCustomValidity('Igredient cannot be blank')"
+                   th:oninput="this.setCustomValidity('')"/>
+        </div>
+    </div><br>
+    <div class="row mb-3">
+        <label class="col-sm-4"></label>
+        <div class="col-sm-4">
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Save</button>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>
