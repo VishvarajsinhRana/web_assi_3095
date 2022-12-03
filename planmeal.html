@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
-    <title>Create Meal Plan</title>
+    <title>Planned Meal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
 
@@ -30,6 +31,7 @@
         <li><a href="searchrecipe.html">Search Recipe</a></li>
         <li><a class="active" href="#">Plan Meal</a></li>
         <li><a href="profile.html">View Profile</a></li>
+        <li><a href="viewcart.html"><i class="fa fa-shopping-cart fa-2x text-dark"></i></a></li>
         <li><a href="logout.html">Logout</a></li>
       </ul>
     </nav>
@@ -53,7 +55,7 @@
                     <th>Description</th>
                 </tr>
                 </thead>
-                <!--
+                
                 <tbody>
                 <tr th:each="meal, mealStat :${meals}">
                     <td th:text="${mealStat.count}"></td>
@@ -64,17 +66,17 @@
                     <td>
                         <form th:action="@{/registered/view-recipe(recipeId=${meal.recipe.id})}" th:object="${meal.recipe}"
                             method="post">
-                            <button class="btn btn-dark" type="submit" th:text="'View Recipe'"></button>
+                            <button class="btn btn-dark" type="submit">View Recipe</button>
                         </form>
                     </td>
                     <td>
                         <form th:action="@{/registered/edit-meal(mealId=${meal.id})}" method="post">
-                            <button class="btn btn-dark" type="submit" th:text="'Edit'"></button>
+                            <button class="btn btn-dark" type="submit">Edit</button>
                         </form>
                     </td>
                     <td>
                         <form th:action="@{/registered/delete-meal(mealId=${meal.id})}" method="post">
-                            <button class="btn btn-dark" type="submit" th:text="'Delete'"></button>
+                            <button class="btn btn-dark" type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>
@@ -84,7 +86,6 @@
         <div class="container p-5 -mt-3" th:if="${count}==0">
             <h4 th:text="${message}"></h4>
         </div>
-    -->
 
   </body>
 </html>

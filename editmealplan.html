@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
     <meta charset="utf-8">
-    <title>Edit Ingredient</title>
+    <title>Create Plan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    *{
-        text-align: center;
-      }
 
-      label{
-        font-size: 1.5em;
-      }
-        
+    <style>
+        *{
+        text-align: center;
+        }
+
+        label{
+            font-size:1.5em;
+        }
+        p{
+            font-size:1.5em;
+        }
     </style>
 
     <nav>
-        <label class="logo">Recipe App</label>
-        <ul>
+      <label class="logo">Recipe App</label>
+      <ul>
         <li><a href="home.html">Home</a></li>
         <li><a href="createrecipe.html">Create Recipe</a></li>
         <li><a class="active" href="#">View Recipe</a></li>
@@ -29,31 +32,31 @@
         <li><a href="profile.html">View Profile</a></li>
         <li><a href="viewcart.html"><i class="fa fa-shopping-cart fa-2x text-dark"></i></a></li>
         <li><a href="logout.html">Logout</a></li>
-        </ul>
+      </ul>
     </nav>
-
-    <title>Edit Ingredient</title>
-</head>
+    
+  </head>
 <body class="text-center">
+<br>
+<h1>Update Plan</h1>
 <br/>
-<h1>Edit Ingredient</h1>
-<br/>
-<form th:action="@{/registered/save-ingredient(ingredientId=${ingredient.id})}" th:object="${ingredient}" method="post">
+<p th:text="${meal.recipe.recipeName}"></p>
+<form th:action="@{/registered/update-meal(mealId=${meal.id})}" th:object="${meal}" method="post">
     <div class="row mb-3">
-        <label class="col-sm-3">Ingredient:</label>
+        <label class="col-sm-3">Planning date:</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" th:field="*{item}" required="true"
-                   th:oninvalid="this.setCustomValidity('Igredient cannot be blank')"
+            <input type="date" class="form-control" th:field="*{dateToBeMade}" th:required="true"
+                   th:oninvalid="this.setCustomValidity('Date cannot be blank')"
                    th:oninput="this.setCustomValidity('')"/>
         </div>
     </div><br>
     <div class="row mb-3">
-        <label class="col-sm-4"></label>
+        <label class="col-sm-2"></label>
+        <label class="col-sm-2"></label>
         <div class="col-sm-4">
             <button class="w-100 btn btn-lg btn-dark" type="submit">Save</button>
         </div>
     </div>
 </form>
 </body>
-
 </html>

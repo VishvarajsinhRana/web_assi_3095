@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+     *{
+        text-align: center;
+      }
+
+      .icon-link{
+        padding:0.4em;
+        font-size: 2.5em ;
+        color: #000000;
+      }
+
+      p{
+        font-size:1.5em;
+      }
+    </style>
+    
+    <nav>
+      <label class="logo">Recipe App</label>
+      <ul>
+        <li><a  href="home.html">Home</a></li>
+        <li><a href="createrecipe.html">Create Recipe</a></li>
+        <li><a href="viewrecipe.html">View Recipe</a></li>
+        <li><a href="searchrecipe.html">Search Recipe</a></li>
+        <li><a href="planmeal.html">Plan Meal</a></li>
+        <li><a href="profile.html">View Profile</a></li>
+        <li><a class="active" href="#"><i class="fa fa-shopping-cart fa-2x text-dark"></i></a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+    
+  </head>
+
+<body>
+<form th:action="@{/registered/download-shopping-list}" method="post" class="text-right">
+    <button class="btn btn-lg btn-dark" type="submit">Download Shopping List As CSV</button>
+</form>
+<h1>Shopping List</h1>
+<div class="container p-4 mt-2" th:if="${count2 &gt; 0}">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Count</th>
+            <th>Item</th>
+            <th>For</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cart, cartStat :${cart}">
+            <td th:text="${cartStat.count}"></td>
+            <td th:text="${cart.ingredient.item}"></td>
+            <td th:text="${cart.ingredient.recipe.recipeName}"></td>
+            <td>
+                <form th:action="@{/registered/delete-cart(cartId=${cart.id})}" method="post">
+                    <button class="btn btn-dark" type="submit">Remove Item</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+</html>

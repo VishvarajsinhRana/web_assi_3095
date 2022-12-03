@@ -36,10 +36,20 @@
     border-radius: 3px;
     text-transform: uppercase;
     }
+    i{
+        color: white;
+        border-radius: 3px;
+        }
     a.active,a:hover{
     background: #1b9bff;
     transition: .5s;
     }
+    ul i{
+        color: white;
+    }
+   
+
+
     .checkbtn{
     font-size: 30px;
     color: white;
